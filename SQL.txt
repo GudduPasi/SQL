@@ -1,0 +1,77 @@
+SELECT CustomerName, City FROM Customers;
+
+SELECT Country FROM Customers;
+
+SELECT * FROM Customers
+WHERE Country='Mexico';
+
+SELECT * FROM Customers
+WHERE CustomerID=1;
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+
+SELECT * FROM Customers
+WHERE City='Berlin' OR City='München';
+
+SELECT * FROM Customers
+WHERE Country='Germany' OR Country='Spain';
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany';
+
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND (City='Berlin' OR City='München');
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany' AND NOT Country='USA';
+
+
+SELECT * FROM Customers
+ORDER BY Country;
+
+
+SELECT * FROM Customers
+ORDER BY Country;
+
+SELECT * FROM Customers
+ORDER BY Country DESC;
+
+
+SELECT * FROM Customers
+ORDER BY Country, CustomerName;
+
+SELECT * FROM Customers
+ORDER BY Country ASC, CustomerName DESC;
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
+
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
+
+UPDATE Customers
+SET ContactName='Juan';
+
+SELECT TOP 3 * FROM Customers;
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL PRIMARY KEY,
+    OrderNumber int NOT NULL,
+    PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+
+
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');
+
+
